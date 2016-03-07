@@ -306,7 +306,6 @@ class SittingManager(models.Manager):
     def new_sitting(self, user, quiz):
         if quiz.random_order is True:
             question_set = quiz.question_set.all() \
-                                            .select_subclasses() \
                                             .order_by('?')
         else:
             question_set = quiz.question_set.all() \

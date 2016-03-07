@@ -1,0 +1,475 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-07 09:50-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: django_quiz/quiz/admin.py:31 django_quiz/quiz/admin.py:33
+#: django_quiz/quiz/models.py:576
+msgid "Questions"
+msgstr ""
+
+#: django_quiz/quiz/models.py:30 django_quiz/quiz/models.py:37
+#: django_quiz/quiz/models.py:53 django_quiz/quiz/models.py:83
+#: django_quiz/quiz/models.py:545 django_quiz/quiz/templates/progress.html:19
+#: django_quiz/quiz/templates/quiz/quiz_detail.html:9
+#: django_quiz/quiz/templates/quiz/quiz_list.html:13
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:10
+msgid "Category"
+msgstr ""
+
+#: django_quiz/quiz/models.py:38
+msgid "Categories"
+msgstr ""
+
+#: django_quiz/quiz/models.py:48 django_quiz/quiz/models.py:58
+#: django_quiz/quiz/models.py:550
+msgid "Sub-Category"
+msgstr ""
+
+#: django_quiz/quiz/models.py:59
+msgid "Sub-Categories"
+msgstr ""
+
+#: django_quiz/quiz/models.py:69
+#: django_quiz/quiz/templates/quiz/quiz_list.html:12
+msgid "Title"
+msgstr ""
+
+#: django_quiz/quiz/models.py:73
+msgid "Description"
+msgstr ""
+
+#: django_quiz/quiz/models.py:74
+msgid "a description of the quiz"
+msgstr ""
+
+#: django_quiz/quiz/models.py:78
+msgid "a user friendly url"
+msgstr ""
+
+#: django_quiz/quiz/models.py:79
+msgid "user friendly url"
+msgstr ""
+
+#: django_quiz/quiz/models.py:87
+msgid "Random Order"
+msgstr ""
+
+#: django_quiz/quiz/models.py:88
+msgid "Display the questions in a random order or as they are set?"
+msgstr ""
+
+#: django_quiz/quiz/models.py:93
+msgid "Max Questions"
+msgstr ""
+
+#: django_quiz/quiz/models.py:94
+msgid "Number of questions to be answered on each attempt."
+msgstr ""
+
+#: django_quiz/quiz/models.py:98
+msgid ""
+"Correct answer is NOT shown after question. Answers displayed at the end."
+msgstr ""
+
+#: django_quiz/quiz/models.py:100
+msgid "Answers at end"
+msgstr ""
+
+#: django_quiz/quiz/models.py:104
+msgid ""
+"If yes, the result of each attempt by a user will be stored. Necessary for "
+"marking."
+msgstr ""
+
+#: django_quiz/quiz/models.py:107
+msgid "Exam Paper"
+msgstr ""
+
+#: django_quiz/quiz/models.py:111
+msgid ""
+"If yes, only one attempt by a user will be permitted. Non users cannot sit "
+"this exam."
+msgstr ""
+
+#: django_quiz/quiz/models.py:114
+msgid "Single Attempt"
+msgstr ""
+
+#: django_quiz/quiz/models.py:118
+msgid "Pass Mark"
+msgstr ""
+
+#: django_quiz/quiz/models.py:119
+msgid "Percentage required to pass exam."
+msgstr ""
+
+#: django_quiz/quiz/models.py:123
+msgid "Displayed if user passes."
+msgstr ""
+
+#: django_quiz/quiz/models.py:124
+msgid "Success Text"
+msgstr ""
+
+#: django_quiz/quiz/models.py:127
+msgid "Fail Text"
+msgstr ""
+
+#: django_quiz/quiz/models.py:128
+msgid "Displayed if user fails."
+msgstr ""
+
+#: django_quiz/quiz/models.py:132
+msgid "Draft"
+msgstr ""
+
+#: django_quiz/quiz/models.py:133
+msgid ""
+"If yes, the quiz is not displayed in the quiz list and can only be taken by "
+"users who can edit quizzes."
+msgstr ""
+
+#: django_quiz/quiz/models.py:153 django_quiz/quiz/models.py:372
+#: django_quiz/quiz/models.py:541
+#: django_quiz/quiz/templates/quiz/sitting_list.html:14
+msgid "Quiz"
+msgstr ""
+
+#: django_quiz/quiz/models.py:154
+msgid "Quizzes"
+msgstr ""
+
+#: django_quiz/quiz/models.py:193 django_quiz/quiz/models.py:370
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:13
+#: django_quiz/quiz/templates/quiz/sitting_list.html:13
+msgid "User"
+msgstr ""
+
+#: django_quiz/quiz/models.py:196 django_quiz/quiz/templates/progress.html:60
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:15
+#: django_quiz/quiz/templates/quiz/sitting_list.html:16
+msgid "Score"
+msgstr ""
+
+#: django_quiz/quiz/models.py:201
+msgid "User Progress"
+msgstr ""
+
+#: django_quiz/quiz/models.py:202
+msgid "User progress records"
+msgstr ""
+
+#: django_quiz/quiz/models.py:262
+msgid "error"
+msgstr ""
+
+#: django_quiz/quiz/models.py:262
+msgid "category does not exist or invalid score"
+msgstr ""
+
+#: django_quiz/quiz/models.py:375
+msgid "Question Order"
+msgstr ""
+
+#: django_quiz/quiz/models.py:378
+msgid "Question List"
+msgstr ""
+
+#: django_quiz/quiz/models.py:381
+msgid "Incorrect questions"
+msgstr ""
+
+#: django_quiz/quiz/models.py:383
+msgid "Current Score"
+msgstr ""
+
+#: django_quiz/quiz/models.py:386
+msgid "Complete"
+msgstr ""
+
+#: django_quiz/quiz/models.py:389
+msgid "User Answers"
+msgstr ""
+
+#: django_quiz/quiz/models.py:392
+msgid "Start"
+msgstr ""
+
+#: django_quiz/quiz/models.py:394
+msgid "End"
+msgstr ""
+
+#: django_quiz/quiz/models.py:399
+msgid "Can see completed exams."
+msgstr ""
+
+#: django_quiz/quiz/models.py:557
+msgid "Figure"
+msgstr ""
+
+#: django_quiz/quiz/models.py:561
+msgid "Enter the question text that you want displayed"
+msgstr ""
+
+#: django_quiz/quiz/models.py:563 django_quiz/quiz/models.py:575
+#: django_quiz/quiz/templates/question.html:47
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:21
+msgid "Question"
+msgstr ""
+
+#: django_quiz/quiz/models.py:567
+msgid "Explanation to be shown after the question has been answered."
+msgstr ""
+
+#: django_quiz/quiz/models.py:570 django_quiz/quiz/templates/question.html:32
+#: django_quiz/quiz/templates/result.html:21
+#: django_quiz/quiz/templates/result.html:87
+msgid "Explanation"
+msgstr ""
+
+#: django_quiz/quiz/templates/base.html:7
+msgid "Example Quiz Website"
+msgstr ""
+
+#: django_quiz/quiz/templates/correct_answer.html:6
+msgid "You answered the above question incorrectly"
+msgstr ""
+
+#: django_quiz/quiz/templates/correct_answer.html:16
+msgid "This is the correct answer"
+msgstr ""
+
+#: django_quiz/quiz/templates/correct_answer.html:23
+msgid "This was your answer."
+msgstr ""
+
+#: django_quiz/quiz/templates/progress.html:6
+msgid "Progress Page"
+msgstr ""
+
+#: django_quiz/quiz/templates/progress.html:7
+msgid "User Progress Page"
+msgstr ""
+
+#: django_quiz/quiz/templates/progress.html:13
+msgid "Question Category Scores"
+msgstr ""
+
+#: django_quiz/quiz/templates/progress.html:20
+msgid "Correctly answererd"
+msgstr ""
+
+#: django_quiz/quiz/templates/progress.html:21
+msgid "Incorrect"
+msgstr ""
+
+#: django_quiz/quiz/templates/progress.html:50
+msgid "Previous exam papers"
+msgstr ""
+
+#: django_quiz/quiz/templates/progress.html:52
+msgid "Below are the results of exams that you have sat."
+msgstr ""
+
+#: django_quiz/quiz/templates/progress.html:59
+msgid "Quiz Title"
+msgstr ""
+
+#: django_quiz/quiz/templates/progress.html:61
+msgid "Possible Score"
+msgstr ""
+
+#: django_quiz/quiz/templates/question.html:13
+#: django_quiz/quiz/templates/result.html:13
+msgid "The previous question"
+msgstr ""
+
+#: django_quiz/quiz/templates/question.html:22
+msgid "Your answer was"
+msgstr ""
+
+#: django_quiz/quiz/templates/question.html:47
+msgid "of"
+msgstr ""
+
+#: django_quiz/quiz/templates/question.html:52
+msgid "Question category"
+msgstr ""
+
+#: django_quiz/quiz/templates/question.html:74
+msgid "Check"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/category_list.html:3
+#: django_quiz/quiz/templates/quiz/quiz_list.html:3
+#: django_quiz/quiz/templates/quiz/sitting_list.html:3
+msgid "All Quizzes"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/category_list.html:6
+msgid "Category list"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/quiz_detail.html:11
+msgid "You will only get one attempt at this quiz"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/quiz_detail.html:16
+msgid "Start quiz"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/quiz_list.html:6
+msgid "List of quizzes"
+msgstr "Lista de exámenes"
+
+#: django_quiz/quiz/templates/quiz/quiz_list.html:14
+msgid "Exam"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/quiz_list.html:15
+msgid "Single attempt"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/quiz_list.html:31
+#: django_quiz/quiz/templates/quiz/sitting_list.html:42
+msgid "View details"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/quiz_list.html:41
+msgid "There are no available quizzes"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:5
+msgid "Result of"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:5
+msgid "for"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:9
+msgid "Quiz title"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:14
+#: django_quiz/quiz/templates/quiz/sitting_list.html:15
+msgid "Completed"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:22
+msgid "User answer"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:41
+msgid "incorrect"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:43
+msgid "Correct"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_detail.html:49
+msgid "Toggle whether correct"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_list.html:6
+msgid "List of complete exams"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_list.html:28
+msgid "Filter"
+msgstr ""
+
+#: django_quiz/quiz/templates/quiz/sitting_list.html:52
+msgid "There are no matching quizzes"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:7
+msgid "Exam Results for"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:32
+msgid "Exam results"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:34
+msgid "Exam title"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:38
+msgid "You answered"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:38
+msgid "questions correctly out of"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:38
+msgid "giving you"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:38
+msgid "percent correct"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:48
+msgid "Review the questions below and try the exam again in the future"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:52
+msgid ""
+"The result of this exam will be stored in your progress section so you can "
+"review and monitor your progression"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:66
+msgid "Your session score is"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:66
+msgid "out of a possible"
+msgstr ""
+
+#: django_quiz/quiz/templates/result.html:84
+msgid "Your answer"
+msgstr ""
+
+#: django_quiz/quiz/templates/single_complete.html:13
+msgid "You have already sat this exam and only one sitting is permitted"
+msgstr ""
+
+#: django_quiz/quiz/templates/single_complete.html:15
+msgid "This exam is only accessible to signed in users"
+msgstr ""
+
+#: django_quiz/quiz/templates/view_quiz_category.html:3
+msgid "Quizzes related to"
+msgstr ""
+
+#: django_quiz/quiz/templates/view_quiz_category.html:6
+msgid "Quizzes in the"
+msgstr ""
+
+#: django_quiz/quiz/templates/view_quiz_category.html:6
+msgid "category"
+msgstr ""
+
+#: django_quiz/quiz/templates/view_quiz_category.html:20
+msgid "There are no quizzes"
+msgstr ""
