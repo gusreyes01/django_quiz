@@ -8,11 +8,12 @@
 
 {% block content %}
 
-
+<div class="white-block">
 {% if user.is_authenticated %}
-  <p>{% trans "You have already sat this exam and only one sitting is permitted" %}.</p>
+  <p>{% trans "Solamente se permite presentar este exámen en una ocasión" %}.</p>
+  <a href="/quiz">Volver</a>
 {% else %}
-  <p>{% trans "This exam is only accessible to signed in users" %}.</p>
+  <p>{% trans "Este exámen es solo para usuarios registrados" %}.</p>
 {% endif %}
-
+</div>
 {% endblock %}

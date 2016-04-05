@@ -40,7 +40,6 @@ class Category(models.Model):
     def __str__(self):
         return self.category
 
-
 @python_2_unicode_compatible
 class SubCategory(models.Model):
 

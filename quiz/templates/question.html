@@ -10,7 +10,7 @@
 
 {% if previous.answers %}
 
-  <p class="muted"><small>{% trans "The previous question" %}:</small></p>
+  <p class="muted"><small>{% trans "Pregunta anterior" %}:</small></p>
   <p>{{ previous.previous_question }}</p>
 
   {% if previous.previous_outcome %}
@@ -19,9 +19,9 @@
 	<div class="alert alert-warning">
   {% endif %}
   	  <p><small>
-		{% trans "Your answer was" %} </small>
+		{% trans "Tu respuesta fue" %} </small>
 		<strong>
-		  {{ previous.previous_outcome|yesno:"correct,incorrect" }}
+		  {{ previous.previous_outcome|yesno:"correcto,incorrecto" }}
 		</strong>
 	  </p>
 
@@ -29,9 +29,9 @@
 
 	{% include 'correct_answer.html' %}
 
-	<p><strong>{% trans "Explanation" %}:</strong></p>
-	<div class="well " style="background-color: #fcf8e3;">
-	  <p>{{ previous.previous_question.explanation }}</p>
+	<p><strong>{% trans "Explicación" %}:</strong></p>
+	<div class="well" style="background-color: #fcf8e3;">
+	  <p class="white-block">{{ previous.previous_question.explanation }}</p>
 	</div>
 
 	<hr>
@@ -43,17 +43,17 @@
 {% if question %}
 
 {% if progress %}
-<div style="float: right;">
-{% trans "Question" %} {{ progress.0|add:1 }} {% trans "of" %} {{ progress.1 }}
+<div style="float: right;" class="white-block">
+{% trans "Pregunta" %} {{ progress.0|add:1 }} {% trans "de" %} {{ progress.1 }}
 </div>
 {% endif %}
 
-<p>
-  <small class="muted">{% trans "Question category" %}:</small>
+<p class="white-block">
+  <small class="muted">{% trans "Categoría" %}:</small>
   <strong>{{ question.category }}</strong>
 </p>
 
-<p class="lead">{{ question.content }}</p>
+<p class="lead white-block">{{ question.content }}</p>
 
 {% if question.figure %}
     <img src="{{ question.figure.url }}" alt="{{ question.content }}" />
@@ -71,7 +71,7 @@
 	{% endfor %}
 
   </ul>
-  <input type="submit" value={% trans "Check" %} class="btn btn-large btn-block btn-warning" >
+  <input type="submit" value={% trans "Revisar" %} class="btn btn-large btn-block btn-warning" >
 </form>
 
 {% endif %}
