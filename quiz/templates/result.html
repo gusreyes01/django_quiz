@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load i18n extras %}
 
 {% load quiz_tags %}
 
@@ -31,7 +31,7 @@
   <div class="white-block">
   <h1 class="text">{% trans "Resultados" %}</h1>
   <p>
-    <small class="muted">{% trans "Exam title" %}: </small>
+    <small class="muted">{% trans "Exámen" %}: </small>
     <strong>{{ quiz.title }}</strong></p>
 
   <p class="lead">
@@ -45,7 +45,7 @@
 
   {% endif %}
 
-  <p>{% trans "Revisa las preguntas e intenta nuevamente."%}.</p>
+  <p>{% trans "Intenta nuevamente en 15 días"%}.</p>
 
   {% if user.is_authenticated %}
 
@@ -70,30 +70,7 @@
 
   {% endif %}
 
-  {% if questions %}
 
-    {% for question in questions %}
-
-      <p class="lead">
-    {{ question.content }}
-    </p>
-
-    {% correct_answer_for_all question %}
-
-      {% if question.user_answer %}
-      <p>{% trans "Your answer" %}: {{ question|answer_choice_to_string:question.user_answer }}</p>
-      {% endif %}
-
-    <p><strong>{% trans "Explanation" %}:</strong></p>
-    <div class="well " style="background-color: #fcf8e3;">
-    <p>{{ question.explanation }}</p>
-    </div>
-
-    <hr>
-
-  {% endfor %}
-
-  {% endif %}
-
+{% process_steps 2 %}
 
 {% endblock %}
