@@ -1,74 +1,23 @@
 {% extends "base.html" %}
-{% load i18n extras %}
+{% load i18n extras static %}
+{% block styles %}<link rel="stylesheet" type="text/css" href='{% static "css/style-exam-app.css" %}'>{% endblock %}
 
 {% load quiz_tags %}
 
-{% block title %} {{ quiz.title}} {% endblock %}
+{% block head_title %} Examen de ingreso | IESC{% endblock %}
 {% block description %} {% trans "Exam Results for" %} {{ quiz.title }} {% endblock %}
+{% block body-class %}quiz result{% endblock body-class %}
 
 {% block content %}
 
-  {% if previous.answers %}
-
-  <p class="muted"><small>{% trans "The previous question" %}:</small></p>
-  <p>{{ previous.previous_question }}</p>
-  <p>Your answer was
-  <strong>
-    {{ previous.previous_outcome|yesno:"correct,incorrect" }}
-  </strong>
-  </p>
-  {% include 'correct_answer.html' %}
-  <p><strong>{% trans "Explanation" %}:</strong></p>
-  <div class="well " style="background-color: #fcf8e3;">
-    <p>{{ previous.previous_question.explanation }}</p>
+<div class="row quiz">
+  <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+      <h1>¡ Felicidades !</h1>
+      <h2>Concluiste exitosamente <br class="hidden-xs">tu examen.</h2>
+      <p>Continua tu proceso para iniciar <br class="hidden-xs">clases en agosto.</p>
+      <div class="btn-wrapp"><a class="btn btn-next" href="/">Finalizar</a></div>
   </div>
-  <hr>
-
-  {% endif %}
-
-  {% if max_score %}
-
-  <div class="white-block">
-  <h1 class="text">{% trans "Resultados" %}</h1>
-  <p>
-    <small class="muted">{% trans "Exámen" %}: </small>
-    <strong>{{ quiz.title }}</strong></p>
-
-  <p class="lead">
-    {% trans "Constestaste" %} {{ score }} {% trans "de" %} {{ max_score }} preguntas correctamente, {% trans "dándote una calificación de  " %} {{ percent }} {% trans "correctas" %}
-  </p>
-
-  {% if quiz.pass_mark %}
-  <hr>
-        <p class="lead">{{ sitting.result_message }}</p>
-  <hr>
-
-  {% endif %}
-
-  <p>{% trans "Intenta nuevamente en 15 días"%}.</p>
-
-  {% if user.is_authenticated %}
-
-    <p>{% trans "Los resultados de este exámen serán guardados en tu historial de progreso." %}</p>
-
-  {% endif %}
-  </div>
-
-
-  {% endif %}
-
-
-  <hr>
-
-  {% if possible %}
-
-  <p class="lead">
-  {% trans "Your session score is" %} {{ session }} {% trans "out of a possible" %} {{ possible }}
-  </p>
-
-  <hr>
-
-  {% endif %}
+</div>
 
 
 {% process_steps 2 %}

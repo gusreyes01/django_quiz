@@ -1,16 +1,18 @@
 {% extends "base.html" %}
-{% load i18n%}
+{% load i18n static %}
+{% block styles %}<link rel="stylesheet" type="text/css" href='{% static "css/style-exam-app.css" %}'>{% endblock %}
 
 {% load quiz_tags %}
 
-{% block title %} {{ quiz.title }} {% endblock %}
+{% block head_title %} Examen de ingreso | IESC {% endblock %}
 {% block description %} {{ quiz.title }} - {{ quiz.description }} {% endblock %}
+{% block body-class %}quiz questions{% endblock body-class %}
 
 {% block content %}
 
 {% if previous.answers %}
-
-  <p class="muted"><small>{% trans "Pregunta anterior" %}:</small></p>
+	<!-- DISABLE -->
+  <!-- <p class="muted"><small>{% trans "Pregunta anterior" %}:</small></p>
   <p>{{ previous.previous_question }}</p>
 
   {% if previous.previous_outcome %}
@@ -34,34 +36,39 @@
 	  <p class="white-block">{{ previous.previous_question.explanation }}</p>
 	</div>
 
-	<hr>
+	<hr> -->
 
 {% endif %}
 
 <br />
 
 {% if question %}
+<div class="row quiz">
+<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
 
+
+
+<h2>
+  <!-- <small class="muted">{% trans "Categoría" %}:</small> -->
+  {{ question.category }}
+</h2>
 {% if progress %}
-<div style="float: right;" class="white-block">
-{% trans "Pregunta" %} {{ progress.0|add:1 }} {% trans "de" %} {{ progress.1 }}
+<div style="" class="white-block progress-question">
+{% trans "Pregunta" %} {{ progress.0|add:1 }} / {{ progress.1 }}
 </div>
 {% endif %}
-
-<p class="white-block">
-  <small class="muted">{% trans "Categoría" %}:</small>
-  <strong>{{ question.category }}</strong>
-</p>
-
-<p class="lead white-block">{{ question.content }}</p>
-
+<p class="question white-block">{{ question.content }}</p>
+</div>
 {% if question.figure %}
-    <img src="{{ question.figure.url }}" alt="{{ question.content }}" />
+<div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1" style="    margin-bottom: 15px;">
+    <img src="{{ question.figure.url }}" alt="{{ question.content }}" class="image-question" />
+</div>
 {% endif %}
+<div class="col-md-8 col-md-offset-2 options-answer col-sm-10 col-sm-offset-1">
 
 <form action="" method="POST">{% csrf_token %}
   <input type=hidden name="question_id" value="{{ question.id }}">
-
+<div class="option-list">
   <ul class="list-group">
 
 	{% for answer in form.answers %}
@@ -71,12 +78,16 @@
 	{% endfor %}
 
   </ul>
-  <input type="submit" value={% trans "Revisar" %} class="btn btn-large btn-block btn-warning" >
+  </div>
+ <div class="btn-wrapp"> <input type="submit" value={% trans "Siguiente" %} class="btn btn-next" ></div>
 </form>
+
+</div>
+</div>
 
 {% endif %}
 
-<hr>
+
 
 
 {% endblock %}

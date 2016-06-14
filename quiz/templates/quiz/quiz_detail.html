@@ -1,26 +1,30 @@
 {% extends 'base.html' %}
-{% load i18n extras %}
-{% block title %}
-{{ quiz.title }}
-{% endblock %}
+{% load i18n extras static %}
+{% block styles %}<link rel="stylesheet" type="text/css" href='{% static "css/style-exam-app.css" %}'>{% endblock %}
+
+{% block head_title %}Examen de ingreso | IESC{% endblock %}
+{% block body-class %}quiz detail{% endblock body-class %}
 
 {% block content %}
+<div class="row quiz">
 <div class="col-sm-8 col-sm-offset-2 text">
 	<div class="white-block">
-	<h1>{{ quiz.title }}</h1>
-	<h1>{% trans "Category" %}: {{ quiz.category }}</h1>
+	<h1>Examen de ingreso</h1>
+	<h2>{{ quiz.category }}</h2>
+	
+	<p>Bienvenido a tu examen de ingreso</p>
+	<p>¡Estás a un paso de iniciar <br class="hidden-xs">tu camino al éxito!</p>
 	{% if quiz.single_attempt %}
-	  <h4>Solamente tendrás un intento para este exámen.</h4>
+	 <!-- <h4>Solamente tendrás un intento para este exámen.</h4>-->
 	{% endif %}
-	<p>{{ quiz.description }}</p>
-	<p>
-	  <a href="{% url 'quiz_question' quiz_name=quiz.url %}">
-		{% trans "Comenzar exámen" %}
+	<div class="btn-wrapp">
+	  <a class="btn btn-next" href="{% url 'quiz_question' quiz_name=quiz.url %}">
+		Empezar
 	  </a>
-	</p>
+	</div>
 	</div>
 </div>
-
+</div>
 {% process_steps 2 %}
 
 {% endblock %}

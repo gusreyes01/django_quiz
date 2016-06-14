@@ -1,13 +1,16 @@
 {% extends 'base.html' %}
-{% load i18n extras %}
-{% block title %}{% trans "All Quizzes" %}{% endblock %}
-
+{% load i18n extras static %}
+{% block title %}Examen de ingreso | IESC{% endblock %}
+{% block styles %}<link rel="stylesheet" type="text/css" href='{% static "css/style-exam-app.css" %}'>{% endblock %}
+{% block body-class %}quiz list{% endblock body-class %}
 {% block content %}
-
+<div class="row quiz">
+<div class="col-sm-8 col-sm-offset-2 text">
     <div class="text">
-		<h1><strong>{% trans "List of quizzes" %}</strong></h1>
+		<h1>{% trans "List of quizzes" %}</h1>
 	</div>
     {% if quiz_list %}
+    <div class="response-table">
 		<table class="table table-bordered table-striped">
 
 		  <thead>
@@ -15,7 +18,7 @@
 			  <th>{% trans "Título" %}</th>
 			  <th>{% trans "Categoría" %}</th>
 			  <th>{% trans "Exámen" %}</th>
-			  <th>{% trans "Un solo intento" %}</th>
+			  <th style="min-width: 137px;">{% trans "Solo 1 intento" %}</th>
 			  <th></th>
 			</tr>
 		  </thead>
@@ -29,10 +32,11 @@
 			  <td>{{ quiz.category }}</td>
 			  <td>{{ quiz.exam_paper }}</td>
 			  <td>{{ quiz.single_attempt|yesno:"Si, No" }}</td>
-			  <td>
+			  <td style="min-width: 70px;">
 				<a href="{% url 'quiz_start_page' slug=quiz.url %}">
-				  {% trans "View details" %}
+				  <b>{% trans "Ver" %}</b>
 				</a>
+				</td>
 			</tr>
 
         {% endfor %}
@@ -40,7 +44,9 @@
 
 		</table>
 
-
+</div>
+</div>
+</div>
 	{% else %}
         <p>{% trans "There are no available quizzes" %}.</p>
     {% endif %}
