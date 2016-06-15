@@ -6,9 +6,7 @@ from .views import QuizListView, CategoriesListView,\
 
 
 urlpatterns = [
-                       url(regex=r'^$',
-                           view=QuizListView.as_view(),
-                           name='quiz_index'),
+                       
 
                        url(regex=r'^category/$',
                            view=CategoriesListView.as_view(),
