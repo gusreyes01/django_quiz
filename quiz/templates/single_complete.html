@@ -14,7 +14,7 @@
 {% if user.is_authenticated %}
   <p>{% trans "Ya has presentado este examen" %}.</p>
   <p>{% trans "Continua tu proceso para iniciar"%} <br class="hidden-xs">{% trans "clases en agosto."%}</p>
-  <div class="btn-wrapp"><a class="btn btn-next" href="/">Volver</a></div>
+  <div class="btn-wrapp"><a class="btn btn-next" href="/calendar">Volver</a></div>
 {% else %}
   <p>{% trans "Este examen es solo para usuarios registrados" %}.</p>
   <p style="font-size: 22px;"><a class="link-text" href="/accounts/login/"><b>Ingresa a tu cuenta</b></a>, Si aún no te has registrado, <a class="link-text" href="/accounts/signup/"><b>crea tu cuenta</b></a>.</p>
