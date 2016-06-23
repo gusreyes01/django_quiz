@@ -9,19 +9,29 @@
 <div class="row quiz">
 <div class="col-sm-8 col-sm-offset-2 text">
 	<div class="white-block">
-	<h1>Examen de ingreso</h1>
-	<h2>{{ quiz.title }}</h2>
-	
-	<p>Bienvenido a tu examen de ingreso</p>
-	<p>¡Estás a un paso de iniciar <br class="hidden-xs">tu camino al éxito!</p>
-	{% if quiz.single_attempt %}
-	 <!-- <h4>Solamente tendrás un intento para este exámen.</h4>-->
-	{% endif %}
-	<div class="btn-wrapp">
-	  <a class="btn btn-next" href="{% url 'quiz_question' quiz_name=quiz.url %}">
-		Empezar
-	  </a>
-	</div>
+		
+		
+		{% if complete %}
+			<h1>Examen de ingreso</h1>
+			<h2>{{ quiz.title }}</h2>
+			<p>Bienvenido a tu examen de ingreso</p>
+			<p>¡Estás a un paso de iniciar <br class="hidden-xs">tu camino al éxito!</p>
+			
+			<div class="btn-wrapp">
+			  <a class="btn btn-next" href="{% url 'quiz_question' quiz_name=quiz.url %}">
+				Empezar
+			  </a>
+			</div>
+		{% else %}
+			<h1>Examen de ingreso</h1>
+			<p><br>Recientemente has presentado tu examen de ingreso, debes espera 15 días para volver a intentarlo.<p>
+			<p>Tu nueva oportunidad estará disponible a partir del:</p>
+			<p style="color: #0070C2;font-size: 30px;font-weight: 700;">{{new_chance}}</p><br>
+		{% endif %}
+
+		{% if quiz.single_attempt %}
+		 <!-- <h4>Solamente tendrás un intento para este exámen.</h4>-->
+		{% endif %}
 	</div>
 </div>
 </div>

@@ -9,7 +9,8 @@ from django.views.generic import DetailView, ListView, TemplateView, FormView
 from .forms import QuestionForm, EssayForm
 from .models import Quiz, Category, Progress, Sitting, Question
 from django_quiz.essay.models import Essay_Question
-
+from django.utils import timezone
+from datetime import datetime, timedelta, time
 
 class QuizMarkerMixin(object):
     @method_decorator(login_required)
@@ -42,11 +43,22 @@ class QuizDetailView(DetailView):
 
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()
+        
+        today = timezone.now()
 
         if self.object.draft and not request.user.has_perm('quiz.change_quiz'):
             raise PermissionDenied
 
-        context = self.get_context_data(object=self.object)
+        try:
+            last = Sitting.objects.filter(user_id=request.user).latest('start')
+            new_chance = last.start + timedelta(days=15)
+            if today >= new_chance:
+                context = self.get_context_data(object=self.object, complete=True)
+            else:
+                context = self.get_context_data(object=self.object, complete=False, new_chance=new_chance)
+        except:
+            context = self.get_context_data(object=self.object, complete=True)
+
         return self.render_to_response(context)
 
 
@@ -144,8 +156,8 @@ class QuizTake(FormView):
         self.logged_in_user = self.request.user.is_authenticated()
 
         if self.logged_in_user:
-            self.sitting = Sitting.objects.user_sitting(request.user,
-                                                        self.quiz)
+            self.sitting = Sitting.objects.user_sitting(request.user, self.quiz)
+
         else:
             self.sitting = self.anon_load_sitting()
 
