@@ -58,6 +58,11 @@
 </div>
 {% endif %}
 <p class="question white-block">{{ question.content }}</p>
+
+{% if question.explanation %}
+	<div class="white-block complement-question">{{ question.explanation|safe }}</div>
+{% endif %}
+
 </div>
 {% if question.figure %}
 <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1" style="    margin-bottom: 15px;">

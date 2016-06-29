@@ -561,7 +561,7 @@ class Question(models.Model):
                                            "you want displayed"),
                                verbose_name=_('Question'))
 
-    explanation = models.TextField(max_length=2000,
+    explanation = models.TextField(max_length=3000,
                                    blank=True,
                                    help_text=_("Explanation to be shown "
                                                "after the question has "
